@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Header from './components/Header';
 import VisualSection from './components/VisualSection';
 import Profile from './components/Profile';
@@ -12,6 +14,14 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 import GarbageCollectionGame from './components/GarbageCollectionGame';
 
 const App = () => {
+  // AOSの初期化
+  React.useEffect(() => {
+    AOS.init({
+      duration: 800, // アニメーションの持続時間（ミリ秒）
+      offset: 100,   // スクロール位置のオフセット
+      once: true,    // スクロールしてから一度だけアニメーションを実行
+    });
+  }, []);
   const [activeSection, setActiveSection] = React.useState('profile');
 
   // スムーズスクロールの設定
