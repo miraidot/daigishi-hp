@@ -13,5 +13,8 @@ export default defineConfig({
         main: './index.html'
       }
     }
+  },
+  define: {
+    'process.env.VITE_MICROCMS_API_KEY': JSON.stringify(process.env.VITE_MICROCMS_API_KEY)
   }
 })
