@@ -4,9 +4,16 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
     - uses: actions/checkout@v3
@@ -24,8 +31,9 @@ jobs:
       env:
         VITE_MICROCMS_API_KEY: ${{ secrets.VITE_MICROCMS_API_KEY }}
 
-    - name: Deploy to GitHub Pages
+    - name: Deploy with GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
+        force_orphan: true
