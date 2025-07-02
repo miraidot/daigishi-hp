@@ -7,7 +7,7 @@ import VisualSection from './components/VisualSection';
 import Profile from './components/Profile';
 import Policy from './components/Policy';
 import ActivityReport from './components/ActivityReport';
-import Notice from './components/Notice';
+import News from './components/News';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
@@ -43,7 +43,7 @@ const App = () => {
             <Profile id="profile" />
             <Policy id="policy" />
             <ActivityReport id="activity" />
-            <Notice id="notice" />
+            <News id="notice" />
             <Contact id="contact" />
             <GarbageCollectionGame />
           </div>
